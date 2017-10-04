@@ -4,17 +4,17 @@ var Queue = function() {
     index: 0
   };
 
-  extend(someInstance, queueMethods);
+  _.extend(someInstance, queueMethods);
 
   return someInstance;
 };
 
 var queueMethods = {};
 
-var extend = function(to, from) {
-  for(var key in from) {
-    to[key] = from[key];
-  }
+
+queueMethods.enqueue = function(value) {
+  this.storage[this.index] = value;
+  this.index++;
 }
 
 queueMethods.size = function() {
