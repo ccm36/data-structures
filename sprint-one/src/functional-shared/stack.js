@@ -17,6 +17,11 @@ var extend = function(to, from) {
   }
 };
 
+stackMethods.push = function(value) {
+  this.index++;
+  this.storage[this.index] = value;
+}
+
 stackMethods.size = function() {
   if (this.index < 0) {
     return 0;
