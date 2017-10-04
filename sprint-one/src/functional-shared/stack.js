@@ -23,7 +23,10 @@ stackMethods.push = function(value) {
 };
 
 stackMethods.pop = function() {
+  var popped = this.storage[this.index];
+  delete this.storage[this.index];
   this.index--;
+  return popped;
 };
 
 stackMethods.size = function() {
