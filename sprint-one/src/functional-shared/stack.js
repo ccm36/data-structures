@@ -20,7 +20,11 @@ var extend = function(to, from) {
 stackMethods.push = function(value) {
   this.index++;
   this.storage[this.index] = value;
-}
+};
+
+stackMethods.pop = function() {
+  this.index--;
+};
 
 stackMethods.size = function() {
   if (this.index < 0) {
