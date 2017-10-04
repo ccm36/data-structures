@@ -9,4 +9,11 @@ var Stack = function() {
 
 var stackMethods = {};
 
+stackMethods.size = function() {
+  if(this.index < 0) {
+    return this.index = 0;
+  }
+  return this.index;
+};
+
 
