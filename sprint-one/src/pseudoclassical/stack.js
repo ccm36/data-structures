@@ -8,7 +8,7 @@ Stack.prototype.push = function(value) {
   this.storage[this.index] = value;
 };
 
-Stack.prototype.pop = function(value) {
+Stack.prototype.pop = function() {
   var popped = this.storage[this.index];
   delete this.storage[this.index];
   this.index--;
