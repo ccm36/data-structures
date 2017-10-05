@@ -9,6 +9,11 @@ var Stack = function() {
 
 var stackMethods = {};
 
+stackMethods.push = function(value) {
+  this.storage[this.index] = value;
+  return this.index++;
+}; 
+
 stackMethods.size = function() {
   if(this.index < 0) {
     return this.index = 0;
