@@ -19,7 +19,11 @@ queueMethods.enqueue = function(value) {
 queueMethods.dequeue = function() {
   var dequeued = this.storage[0];
   delete this.storage[0];
-  this.storage[0] = this.storage[1];
+
+  for(var i = 0; i < this.index; i++) {
+    this.storage[i] = this.storage[i + 1];
+  }
+  
   this.index--;
   return dequeued;
 };
