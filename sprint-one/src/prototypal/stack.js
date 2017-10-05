@@ -10,9 +10,16 @@ var Stack = function() {
 var stackMethods = {};
 
 stackMethods.push = function(value) {
+  this.index++;
   this.storage[this.index] = value;
-  return this.index++;
 }; 
+
+stackMethods.pop = function() {
+  var popped = this.storage[this.index];
+  delete this.storage[this.index];
+  this.index--;
+  return popped;
+};
 
 stackMethods.size = function() {
   if(this.index < 0) {
