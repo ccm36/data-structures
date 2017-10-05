@@ -4,8 +4,15 @@ var Stack = function() {
 };
 
 Stack.prototype.push = function(value) {
-  this.storage[this.index] = value;
   this.index++;
+  this.storage[this.index] = value;
+};
+
+Stack.prototype.pop = function(value) {
+  var popped = this.storage[this.index];
+  delete this.storage[this.index];
+  this.index--;
+  return popped;
 };
 
 Stack.prototype.size = function() {
@@ -13,7 +20,7 @@ Stack.prototype.size = function() {
     return this.index = 0;
   }
   return this.index;
-}
+};
 
 var someInstance = new Stack();
 
