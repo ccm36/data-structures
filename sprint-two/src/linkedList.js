@@ -20,6 +20,8 @@ var LinkedList = function() {
   };
 
   list.removeHead = function() {
+    var head = this.head;
+    this.head = this.head.next;
   };
 
   list.contains = function(target) {
