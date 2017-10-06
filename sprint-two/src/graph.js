@@ -23,22 +23,41 @@ Graph.prototype.contains = function(node) {
 
 // Removes a node from the graph.
 Graph.prototype.removeNode = function(node) {
+  var index = this.nodes.indexOf(node);
+  this.nodes.splice(index, 1);
 };
 
 // Returns a boolean indicating whether two specified nodes are connected.  Pass in the values contained in each of the two nodes.
 Graph.prototype.hasEdge = function(fromNode, toNode) {
+  if (this.nodes.includes(fromNode) && this.nodes.includes(toNode)) {
+    for(var i = 0; i < this.edges.length; i++) {
+      if (this.edges[i].includes(fromNode) && this.edges[i].includes(toNode)) {
+        return true;
+      }
+    }
+  }
+  return false;
 };
 
 // Connects two nodes in a graph by adding an edge between them.
 Graph.prototype.addEdge = function(fromNode, toNode) {
+  this.edges.push([fromNode, toNode]);
 };
 
 // Remove an edge between any two specified (by value) nodes.
 Graph.prototype.removeEdge = function(fromNode, toNode) {
+  for(var i = 0; i < this.edges.length; i++) {
+    if (this.edges[i].includes(fromNode) && this.edges[i].includes(toNode)) {
+      this.edges.splice(i, 1);
+    }
+  };
 };
 
 // Pass in a callback which will be executed on each node of the graph.
 Graph.prototype.forEachNode = function(cb) {
+  this.nodes.forEach(function(node) {
+    cb(node);
+  });
 };
 
 var someInstance = new Graph();
