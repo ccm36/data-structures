@@ -10,15 +10,17 @@ var Tree = function(value) {
 var treeMethods = {};
 
 treeMethods.addChild = function(value) {
-  this.children.push(Tree(value));
+  var child = new Tree(value)
+  this.children.push(child);
 };
 
 treeMethods.contains = function(target) {
   if (this.value === target) {
     return true;
   }
+  
   return this.children.reduce(function(contain, child) {
-    if (contain || child.value === target) {
+    if (contain || child.contains(target)) {
       contain = true;
     }
     return contain;
