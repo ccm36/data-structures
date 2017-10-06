@@ -64,6 +64,20 @@ var someInstance = new Graph();
 
 /*
  * Complexity: What is the time complexity of the above functions?
+
+  O(1) : .addNode and .addEdge 
+    they don't depend on the size of data,
+    putting the new node or edge in the graph is constant
+
+  O(n) : .contains, .removeNode, .removeEdge, and .forEachNode
+    they each iterate through each piece of data in the graph
+
+  O(n^2) : .hasEdge
+    since I searched for both, if the nodes exists, and if they have 
+    a connecting edge, this iterates through the data twice
+    (very inefficient)...MVP
+
+
  */
 
 
