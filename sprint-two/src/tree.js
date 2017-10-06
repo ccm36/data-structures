@@ -10,7 +10,7 @@ var Tree = function(value) {
 var treeMethods = {};
 
 treeMethods.addChild = function(value) {
-  var child = new Tree(value)
+  var child = new Tree(value);
   this.children.push(child);
 };
 
