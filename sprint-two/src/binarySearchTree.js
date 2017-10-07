@@ -44,6 +44,7 @@ BinarySearchTree.prototype.depthFirstLog = function(cb) {
 /*
  * Complexity: What is the time complexity of the above functions?
  
- 
+ O(n) time complexity because for each function, you must move to each node
+ to perform the desired action
  
  */
